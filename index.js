@@ -7,13 +7,15 @@ const port = process.env.PORT || "3000";
 
 const app = express();
 const prisma = new PrismaClient();
+
 app.use(cors({
   origin: ["*"]
 }));
+
 app.use(express.json());
 
-app.use(bodyParser.json({ limit: "40mb" }));
-app.use(bodyParser.urlencoded({ limit: "40mb", extended: true }));
+// app.use(bodyParser.json({ limit: "40mb" }));
+// apps.use(bodyParser.urlencoded({ limit: "40mb", extended: true }));
 
 app.post("/lamp", async (req, res) => {
   const job = await prisma.lamp.create({ data: req.body });
