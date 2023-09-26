@@ -7,7 +7,9 @@ const port = process.env.PORT || "3000";
 
 const app = express();
 const prisma = new PrismaClient();
-app.use(cors());
+app.use(cors({
+  origin: ["*"]
+}));
 app.use(express.json());
 
 app.use(bodyParser.json({ limit: "40mb" }));
