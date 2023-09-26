@@ -22,7 +22,7 @@ app.post("/lamp", async (req, res) => {
   res.json(job);
 });
 
-app.put("/lamp/:id", async (req, res) => {
+app.post("/lamp/:id", async (req, res) => {
   const id = req.params.id;
   const job = await prisma.lamp.update({
     where: {
