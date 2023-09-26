@@ -33,9 +33,7 @@ app.post("/lamp/:id", async (req, res) => {
     },
   });
   res.header("Access-Control-Allow-Origin", "*");
-  res.json({
-    ...job, body: req.body
-  });
+  res.json(job);
 });
 
 app.get("/lamp", async (req, res) => {
