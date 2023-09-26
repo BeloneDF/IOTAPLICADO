@@ -12,7 +12,7 @@ app.use(cors({
   origin: ["*"]
 }));
 
-app.use(express.json());
+//app.use(express.json());
 
 app.use(bodyParser.json({ limit: "40mb" }));
 app.use(bodyParser.urlencoded({ limit: "40mb", extended: true }));
