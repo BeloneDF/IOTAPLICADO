@@ -23,6 +23,7 @@ app.post("/lamp", async (req, res) => {
 });
 
 app.post("/lamp/:id", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const id = req.params.id;
   const job = await prisma.lamp.update({
     where: {
@@ -32,7 +33,7 @@ app.post("/lamp/:id", async (req, res) => {
       on: req.body.on
     },
   });
-  res.header("Access-Control-Allow-Origin", "*");
+  
   res.json(job);
 });
 
