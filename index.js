@@ -29,7 +29,9 @@ app.put("/lamp/:id", async (req, res) => {
     },
   });
   res.header("Access-Control-Allow-Origin", "*");
-  res.json(job);
+  res.json({
+    ...job, body: req.body
+  });
 });
 
 app.get("/lamp", async (req, res) => {
