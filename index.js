@@ -24,7 +24,9 @@ app.put("/lamp/:id", async (req, res) => {
     where: {
       id: Number(id),
     },
-    data: req.body,
+    data: {
+      on: req.body.on
+    },
   });
   res.header("Access-Control-Allow-Origin", "*");
   res.json(job);
