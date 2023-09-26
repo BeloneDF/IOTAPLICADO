@@ -11,8 +11,7 @@ const prisma = new PrismaClient();
 app.use(cors({
   origin: '*'
 }));
-//novo teste
-//app.use(express.json());
+app.use(express.json());
 
 app.use(bodyParser.json({ limit: "40mb" }));
 app.use(bodyParser.urlencoded({ limit: "40mb", extended: true }));
