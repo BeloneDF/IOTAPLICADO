@@ -14,7 +14,7 @@ app.use(cors({
 
 app.use(express.json());
 
-// app.use(bodyParser.json({ limit: "40mb" }));
+app.use(bodyParser.json({ limit: "40mb" }));
 // apps.use(bodyParser.urlencoded({ limit: "40mb", extended: true }));
 
 app.post("/lamp", async (req, res) => {
