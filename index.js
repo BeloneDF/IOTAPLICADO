@@ -37,7 +37,11 @@ app.post("/lamp/:id", async (req, res) => {
 });
 
 app.get("/lamp", async (req, res) => {
-  const job = await prisma.lamp.findMany();
+  const job = await prisma.lamp.findMany({
+    orderBy: {
+      id: "asc"
+    }
+  });
   res.header("Access-Control-Allow-Origin", "*");
   res.json(job);
 });
